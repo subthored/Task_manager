@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+html, body {
+    font-family: Nunito, ui-sans-serif, system-ui;
+}
+
+ul.error-list li {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+div.alert {
+    position: relative;
+    top: 60px;
+    /*padding: 20px;*/
+}
+
+.alert-success {
+    color: #3c763d;
+    background-color: #dff0d8;
+    border-color: #d6e9c6;
+}
+
+.alert-danger {
+    color: #a94442;
+    background-color: #f2dede;
+    border-color: #ebccd1;
+}
+
+.alert {
+    padding: 15px;
+    margin-bottom: 20px;
+    border: 1px solid transparent;
+    border-radius: 4px;
+}

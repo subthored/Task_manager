@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('content')
     <div class="mr-auto place-self-center lg:col-span-7">
-        <h1 class="font-extrabold  xl:text-6xl">Привет от Хекслета!</h1>
+        <h1 class="font-extrabold text-white xl:text-6xl">Привет от Хекслета!</h1>
         <p class="max-w-2xl mb-6 font-light text-gray-500 text-xl mt-4">
             Это простой менеджер задач на Laravel </p>
         <div class="space-y-4">
