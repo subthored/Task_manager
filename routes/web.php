@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\TaskStatusController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\TaskController;
 
 Route::get('/', function () {
     return view('index');
@@ -25,5 +26,11 @@ Route::middleware('auth')->group(function () {
 Route::resource('task_statuses', TaskStatusController::class)->only('index');
 Route::resource('task_statuses', TaskStatusController::class)
     ->middleware('auth')->except('index');
+
+Route::resource('tasks', TaskController::class)
+    ->middleware(['auth', 'can:delete,task'])->only('delete');
+Route::resource('tasks', TaskController::class)
+    ->middleware('auth')->except('index', 'show');
+Route::resource('tasks', TaskController::class)->only('index', 'show');
 
 require __DIR__.'/auth.php';
