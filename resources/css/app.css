@@ -47,3 +47,16 @@ div.alert {
 .btn-primary:hover {
     background: rgb(29, 78, 216);
 }
+
+.labelspan {
+    color: rgb(29 78 216);
+    font-weight: 700;
+    font-size: .75rem;
+    line-height: 1rem;
+    text-transform: uppercase;
+    background: rgb(191 219 254);
+    border-radius: 9999px;
+    display: inline-flex;
+    padding: .25rem .75rem;
+    align-items: center;
+}
