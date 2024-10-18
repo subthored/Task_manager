@@ -14,9 +14,9 @@ Route::get('/index', function () {
     return view('index');
 })->name('index');
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+//Route::get('/dashboard', function () {
+//    return view('dashboard');
+//})->middleware(['auth', 'verified'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -38,4 +38,4 @@ Route::resource('labels', LabelController::class)->only('index');
 Route::resource('labels', LabelController::class)
     ->middleware('auth')->except('index');
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';

@@ -21,12 +21,6 @@ class DatabaseSeeder extends Seeder
     {
         $now = now();
 
-//        User::factory()->create([
-//            'name' => 'user1',
-//            'email' => 'user@mail.com',
-//            'created_at' => $now
-//        ]);
-
         DB::table('users')->insert([
             ['name' => 'user1', 'email' => 'user1@mail.com', 'password' => Hash::make('852456'), 'created_at' => $now],
             ['name' => 'user2', 'email' => 'user2@mail.com', 'password' => Hash::make('852456'), 'created_at' => $now],

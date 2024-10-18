@@ -7,8 +7,14 @@ start-frontend:
 setup:
 	composer install
 
+database:
+	touch database/database.sqlite
+
 migrate:
 	php artisan migrate
+
+seed:
+	php ardtisan db:seed
 
 test:
 	php artisan test
@@ -20,4 +26,4 @@ lint:
 	composer exec --verbose phpcs
 
 lint-fix:
-	composer exec -verbose phpcbf
+	composer exec --verbose phpcbf
