@@ -35,3 +35,15 @@ div.alert {
     border: 1px solid transparent;
     border-radius: 4px;
 }
+
+.btn-primary {
+    background: rgb(59, 130, 246);
+    color: #fff;
+    font-weight: 700;
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+}
+
+.btn-primary:hover {
+    background: rgb(29, 78, 216);
+}
