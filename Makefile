@@ -27,3 +27,6 @@ lint:
 
 lint-fix:
 	composer exec --verbose phpcbf
+
+phpstan:
+	vendor/bin/phpstan analyse -c phpstan.neon
