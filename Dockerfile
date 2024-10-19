@@ -18,7 +18,7 @@ WORKDIR /app
 COPY . .
 RUN composer install
 RUN php artisan config:clear
-ENV APP_ENV production
+ENV DB_CONNECTION pgsql
 RUN cp -a .env.example .env
 RUN php artisan key:generate
 RUN npm ci
