@@ -17,7 +17,10 @@ WORKDIR /app
 
 COPY . .
 RUN composer install
+RUN php artisan config:clear
+RUN cp -a .env.example .env
+RUN php artisan key:generate
 RUN npm ci
 RUN npm run build
 
-CMD ["bash", "-c", "cp -a .env.example .env && php artisan key:generate && php artisan migrate:refresh --force --seed && php artisan serve --host=0.0.0.0 --port=$PORT"]
+CMD ["bash", "-c", "php artisan migrate:refresh --force --seed && php artisan serve --host=0.0.0.0 --port=$PORT"]
