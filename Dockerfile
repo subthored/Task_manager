@@ -17,9 +17,6 @@ WORKDIR /app
 
 COPY . .
 RUN composer install
-#RUN php artisan config:clear
-#RUN cp -a .env.example .env
-#RUN php artisan key:generate
 RUN npm ci
 RUN npm run build
 

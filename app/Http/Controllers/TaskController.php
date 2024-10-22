@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Routing\Controller;
 use App\Http\Requests\TaskRequest;
 use App\Models\TaskStatus;
 use App\Models\User;

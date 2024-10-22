@@ -6,9 +6,9 @@ window.Alpine = Alpine;
 
 Alpine.start();
 
-// import ujs from '@rails/ujs';
-//
-// ujs.start();
+import ujs from '@rails/ujs';
+
+ujs.start();
 document.addEventListener('DOMContentLoaded', function () {
     const resetButton = document.querySelector('button[type="reset"]');
     resetButton.addEventListener('click', function (event) {

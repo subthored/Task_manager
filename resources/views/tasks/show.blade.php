@@ -6,10 +6,10 @@
             <a href="{{ route('tasks.edit', $task->id) }}">⚙</a>
         @endauth
     </h2>
-    <p><span class="font-bold text-white">{{__('Name')}}: </span>{{ $task->name }}</p>
-    <p><span class="font-bold text-white">{{__('Status')}}: </span>{{ $task->status_name }}</p>
-    <p><span class="font-bold text-white">{{__('Description')}}: </span>{{ $task->description }}</p>
-    <p><span class="font-bold text-white">{{ __('Labels') }}: </span></p>
+    <p class="text-white"><span class="font-bold">{{__('Name')}}: </span>{{ $task->name }}</p>
+    <p class="text-white"><span class="font-bold">{{__('Status')}}: </span>{{ $task->status_name }}</p>
+    <p class="text-white"><span class="font-bold">{{__('Description')}}: </span>{{ $task->description }}</p>
+    <p class="text-white"><span class="font-bold">{{ __('Labels') }}: </span></p>
     <div>
         @foreach($task->labels as $label)
             <span class="labelspan">
