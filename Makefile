@@ -4,7 +4,7 @@ start:
 start-frontend:
 	npm run dev
 
-setup:
+install:
 	composer install
 
 database:
@@ -14,7 +14,7 @@ migrate:
 	php artisan migrate
 
 seed:
-	php ardtisan db:seed
+	php artisan db:seed
 
 test:
 	php artisan test
