@@ -5,7 +5,7 @@ start-frontend:
 	npm run dev
 
 install:
-	composer install
+	composer install && npm install
 
 database:
 	touch database/database.sqlite

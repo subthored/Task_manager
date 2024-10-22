@@ -7,7 +7,7 @@
             @include('tasks.filter-form')
             @auth
                 <div class="flex">
-                    <x-primary-a-button :route="('tasks.create')" :method="'GET'">
+                    <x-primary-a-button :route="route('tasks.create')" :method="'GET'">
                         {{__('Create task')}}
                     </x-primary-a-button>
                 </div>

@@ -17,6 +17,7 @@ WORKDIR /app
 
 COPY . .
 RUN composer install
+RUN npm install
 RUN npm ci
 RUN npm run build
 

@@ -30,13 +30,6 @@ class TaskStatusController extends Controller
         return redirect()->route('task_statuses.index');
     }
 
-
-    public function show(TaskStatus $taskStatus)
-    {
-        //
-    }
-
-
     public function edit(TaskStatus $taskStatus)
     {
         return view('taskStatuses.edit', compact('taskStatus'));
@@ -59,7 +52,7 @@ class TaskStatusController extends Controller
         } catch (\Exception $e) {
             flash(__('Failed to remove status'))->error();
         }
-        return redirect()->route('tasks_statuses.index');
+        return redirect()->route('task_statuses.index');
     }
 
     private function saveTaskStatus(TaskStatus $taskStatus, TaskStatusRequest $request)

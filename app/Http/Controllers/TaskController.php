@@ -78,7 +78,7 @@ class TaskController extends Controller
     {
         $this->saveTask($task, $request);
         flash(__('Task updated successfully'))->success();
-        return redirect()->route('task.index');
+        return redirect()->route('tasks.index');
     }
 
     public function destroy(Task $task)

@@ -60,3 +60,12 @@ div.alert {
     padding: .25rem .75rem;
     align-items: center;
 }
+
+.plus-button {
+    padding: 2px 6px;
+    text-align: center;
+    margin: 4px 2px;
+    border-radius: .25rem;
+    background: rgb(12, 68, 0);
+    color: #fff;
+}

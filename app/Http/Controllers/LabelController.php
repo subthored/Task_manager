@@ -18,7 +18,7 @@ class LabelController extends Controller
 
     public function create(Request $request)
     {
-        return view('labels.edit', ['label' => new Label()]);
+        return view('labels.create', ['label' => new Label()]);
     }
 
     public function store(LabelRequest $request)
@@ -26,11 +26,6 @@ class LabelController extends Controller
         $this->saveLabel(new Label(), $request);
         flash(__('Label updated successfully'))->success();
         return redirect()->route('labels.index');
-    }
-
-    public function show(string $id)
-    {
-        //
     }
 
     public function edit(Label $label)
