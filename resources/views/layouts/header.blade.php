@@ -10,7 +10,7 @@
                 </div>
 
                 <a href="{{ route('index') }}" class="flex items-center">
-                    <span class="self-center text-xl font-semibold whitespace-nowrap">Task manager</span>
+                    <span class="self-center text-xl font-semibold whitespace-nowrap">Менеджер задач</span>
                 </a>
             </div>
 
@@ -18,15 +18,15 @@
                 @auth
                     <div>{{ Auth::user()->name }}</div>
                     <x-primary-a-button :route="route('logout')" :method="'POST'" class="ml-4">
-                        {{__('Sign out')}}
+                        {{__('Выход')}}
                     </x-primary-a-button>
                 @endauth
                 @guest
                     <x-primary-a-button :route="route('login')" :method="'GET'" class="ml-4">
-                        {{__('Sign in')}}
+                        {{__('Вход')}}
                     </x-primary-a-button>
                     <x-primary-a-button :route="route('register')" :method="'GET'" class="ml-4">
-                        {{__('Sign up')}}
+                        {{__('Регистрация')}}
                     </x-primary-a-button>
                 @endguest
             </div>
@@ -36,17 +36,17 @@
                     <li>
                         <a href="{{ route('tasks.index') }}"
                            class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0">
-                            {{__('Tasks')}} </a>
+                            {{__('Задачи')}} </a>
                     </li>
                     <li>
                         <a href="{{ route('task_statuses.index') }}"
                            class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0">
-                            {{__('Statuses')}} </a>
+                            {{__('Статусы')}} </a>
                     </li>
                     <li>
                         <a href="{{route('labels.index')}}"
                            class="block py-2 pl-3 pr-4 text-gray-700 hover:text-blue-700 lg:p-0">
-                            {{__('Labels')}} </a>
+                            {{__('Метки')}} </a>
                     </li>
                 </ul>
             </div>

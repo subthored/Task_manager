@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
 @section('content')
-    <h2 class="my-8 text-3xl text-white">{{__('View Task')}}: {{ $task->name }}
+    <h2 class="my-8 text-3xl text-white">{{__('Просмотр задачи')}}: {{ $task->name }}
         @auth
             <a href="{{ route('tasks.edit', $task->id) }}">⚙</a>
         @endauth
     </h2>
-    <p class="text-white"><span class="font-bold">{{__('Name')}}: </span>{{ $task->name }}</p>
-    <p class="text-white"><span class="font-bold">{{__('Status')}}: </span>{{ $task->status_name }}</p>
-    <p class="text-white"><span class="font-bold">{{__('Description')}}: </span>{{ $task->description }}</p>
-    <p class="text-white"><span class="font-bold">{{ __('Labels') }}: </span></p>
+    <p class="text-white"><span class="font-bold">{{__('Имя')}}: </span>{{ $task->name }}</p>
+    <p class="text-white"><span class="font-bold">{{__('Статус')}}: </span>{{ $task->status_name }}</p>
+    <p class="text-white"><span class="font-bold">{{__('Описание')}}: </span>{{ $task->description }}</p>
+    <p class="text-white"><span class="font-bold">{{ __('Метки') }}: </span></p>
     <div>
         @foreach($task->labels as $label)
             <span class="labelspan">

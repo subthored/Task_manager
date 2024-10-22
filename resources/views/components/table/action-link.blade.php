@@ -6,12 +6,12 @@
             'class' => 'text-red-600 mr-4',
             'confirm' => 'Вы уверены?',
             'method' => 'delete',
-            'text' => 'Delete',
+            'text' => 'Удалить',
         ],
         'update' => [
             'class' => 'text-blue-600',
             'method' => 'get',
-            'text' => 'Change',
+            'text' => 'Изменить',
         ],
     ];
 @endphp

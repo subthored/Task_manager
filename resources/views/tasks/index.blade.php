@@ -1,14 +1,14 @@
 @extends('layouts.app')
 @section('content')
     <div class="grid col-span-full">
-        <x-h1 class="text-white">{{ __('Tasks') }}</x-h1>
+        <x-h1 class="text-white">{{ __('Задачи') }}</x-h1>
 
         <div class="w-full flex justify-between">
             @include('tasks.filter-form')
             @auth
                 <div class="flex">
                     <x-primary-a-button :route="route('tasks.create')" :method="'GET'">
-                        {{__('Create task')}}
+                        {{__('Создать задачу')}}
                     </x-primary-a-button>
                 </div>
             @endauth
@@ -16,7 +16,7 @@
 
         @auth
             <x-table.table class="text-gray-500"
-                :headers="['ID', __('Status'), __('Name'), __('Author'), __('Executor'), __('Date of creation'), __('Action')]"
+                :headers="['ID', __('Статус'), __('Имя'), __('Автор'), __('Исполнитель'), __('Дата создания'), __('Действия')]"
                 :items="$tasks"
                 :routes="['update'=> 'tasks.edit', 'delete' => 'tasks.destroy']"
                 :fields="['id', 'status_name', 'name', 'author_name', 'executor_name', 'created_at', 'action']">
@@ -24,7 +24,7 @@
         @endauth
         @guest
             <x-table.table class="text-gray-500"
-                :headers="['ID', __('Status'), __('Name'), __('Author'), __('Executor'),__('Date of creation')]"
+                :headers="['ID', __('Статус'), __('Имя'), __('Автор'), __('Исполнитель'),__('Дата создания')]"
                 :items="$tasks"
                 :fields="['id', 'status_name', 'name', 'author_name', 'executor_name', 'created_at']">
             </x-table.table>

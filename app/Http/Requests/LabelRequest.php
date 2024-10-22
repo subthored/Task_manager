@@ -33,7 +33,6 @@ class LabelRequest extends FormRequest
             } else {
                 $labelId = null;
             }
-//        $labelId = $this->route('label') ? $this->route('label')->id : null;
         return [
             'name' => ['required', 'max:255', Rule::unique('labels', 'name')->ignore($labelId)],
             'description' => 'nullable|max:1000'
@@ -47,7 +46,7 @@ class LabelRequest extends FormRequest
                 $errors = $validator->errors();
                 if ($errors->has('name') && $errors->first('name') === 'The name has already been taken') {
                     $errors->forget('name');
-                    $errors->add('name', __('Label with the same name already exists'));
+                    $errors->add('name', __('Метка с таким именем уже сущевствует'));
                 }
             }
         ];
