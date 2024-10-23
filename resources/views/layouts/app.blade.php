@@ -18,7 +18,6 @@
 <body>
 @include('layouts.header')
 @include('flash::message')
-<p>Привет от хекслета!</p>
 <main>
     <section class="bg-white dark:bg-gray-900">
         <div class="grid max-w-screen-xl px-4 pt-20 pb-8 mx-auto">
