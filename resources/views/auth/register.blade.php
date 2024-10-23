@@ -44,7 +44,7 @@
                 {{ __('Уже зарегистрированы?') }}
             </a>
 
-            <x-primary-button class="ms-4">
+            <x-primary-button class="btn-primary capitalize ms-4">
                 {{ __('Зарегистрировать') }}
             </x-primary-button>
         </div>

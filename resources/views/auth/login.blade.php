@@ -39,7 +39,7 @@
                 </a>
             @endif
 
-            <x-primary-button class="ms-3">
+            <x-primary-button class="btn-primary capitalize ms-3">
                 {{ __('Войти') }}
             </x-primary-button>
         </div>
