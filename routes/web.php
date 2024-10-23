@@ -8,10 +8,11 @@ use App\Http\Controllers\LabelController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('/');
 
 Route::get('/index', function () {
-    return view('index');
+//    return view('index');
+    return redirect()->route('/');
 })->name('index');
 
 Route::middleware('auth')->group(function () {
