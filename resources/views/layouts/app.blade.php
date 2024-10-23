@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="//fonts.bunny.net/css?family=figtree:400,500,600&display=swap">
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Nunito">
     <!-- Scripts -->
-    @vite(['./resources/css/app.css', './resources/js/app.js'])
+    @vite(['/resources/css/app.css', '/resources/js/app.js'])
 </head>
 
 <body>
