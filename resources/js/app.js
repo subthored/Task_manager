@@ -21,4 +21,24 @@ document.addEventListener('DOMContentLoaded', function () {
         url.searchParams.delete('filter[assigned_to_id]');
         window.location.href = url.toString();
     });
+
+    let labelCreateButton = document.getElementById('labelCreateButton');
+    let taskForm = document.getElementById('taskForm');
+
+    if (labelCreateButton && taskForm) {
+        labelCreateButton.addEventListener('click', function (event) {
+            event.preventDefault();
+
+            let formData = new FormData(taskForm);
+            let formObject = {};
+
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            sessionStorage.setItem('task_form_data', JSON.stringify(formObject));
+            window.location.href = labelCreateButton.href;
+        });
+    }
 });
+
