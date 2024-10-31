@@ -8,7 +8,6 @@ use Tests\TestCase;
 
 class ProfileTest extends TestCase
 {
-    use RefreshDatabase;
 
     public function testProfilePageIsDisplayed(): void
     {

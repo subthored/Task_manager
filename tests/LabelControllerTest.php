@@ -12,7 +12,6 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LabelControllerTest extends TestCase
 {
-    use RefreshDatabase;
 
     public function setUp(): void
     {

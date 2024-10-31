@@ -7,7 +7,6 @@ use Tests\TestCase;
 
 class RegistrationTest extends TestCase
 {
-    use RefreshDatabase;
 
     public function testRegistrationScreenCanBeRendered(): void
     {

@@ -12,7 +12,7 @@ class LabelController extends Controller
 {
     public function index()
     {
-        $labels = Label::all();
+        $labels = Label::query()->paginate(15);
         return view('labels.index', compact('labels'));
     }
 

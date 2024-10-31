@@ -12,7 +12,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class TaskControllerTest extends TestCase
 {
-    use RefreshDatabase;
 
     public function setUp(): void
     {

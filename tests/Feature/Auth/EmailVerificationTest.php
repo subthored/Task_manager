@@ -11,7 +11,6 @@ use Tests\TestCase;
 
 class EmailVerificationTest extends TestCase
 {
-    use RefreshDatabase;
 
     public function testEmailVerificationScreenCanBeRendered(): void
     {
