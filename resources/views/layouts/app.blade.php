@@ -7,9 +7,9 @@
     <meta name="csrf-param" content="_token">
     <title>{{ config('app.name', 'Laravel') }}</title>
     <!-- Fonts -->
-    <link rel="preconnect" type="text/html" href="//fonts.bunny.net">
-    <link rel="stylesheet" type="text/css" href="//fonts.bunny.net/css?family=figtree:400,500,600&display=swap">
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Nunito">
+    <link rel="preconnect" href="//fonts.bunny.net">
+    <link rel="stylesheet" href="//fonts.bunny.net/css?family=figtree:400,500,600&display=swap">
+    <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Nunito">
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
