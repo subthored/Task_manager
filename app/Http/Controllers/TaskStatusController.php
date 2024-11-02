@@ -39,7 +39,7 @@ class TaskStatusController extends Controller
     public function update(TaskStatusRequest $request, TaskStatus $taskStatus)
     {
         $this->saveTaskStatus($taskStatus, $request);
-        flash(__('Статус успешно обновлен'))->success();
+        flash(__('Статус успешно изменён'))->success();
         return redirect()->route('task_statuses.index');
     }
 
