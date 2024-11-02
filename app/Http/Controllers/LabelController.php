@@ -24,7 +24,7 @@ class LabelController extends Controller
     public function store(LabelRequest $request)
     {
         $this->saveLabel(new Label(), $request);
-        flash(__('Метка успешно обновлена'))->success();
+        flash(__('Метка успешно создана'))->success();
         return redirect()->route('labels.index');
     }
 

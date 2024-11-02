@@ -26,7 +26,7 @@ class TaskStatusController extends Controller
     {
         $taskStatus = new TaskStatus();
         $this->saveTaskStatus($taskStatus, $request);
-        flash(__('Status created successfully'))->success();
+        flash(__('Статус успешно создан'))->success();
         return redirect()->route('task_statuses.index');
     }
 
