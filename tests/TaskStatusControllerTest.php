@@ -87,33 +87,15 @@ class TaskStatusControllerTest extends TestCase
         $response->assertRedirect('/task_statuses');
     }
 
-//    public function testDestroy()
-//    {
-//        $response = $this->delete(route('task_statuses.destroy', ['task_status' => $this->taskStatus->id]));
-//
-//        $response->assertStatus(302);
-//        $response->assertRedirect('task_statuses');
-//        $this->assertModelMissing($this->taskStatus);
-//    }
-//
-//    public function testDestroyTaskStatusInUse()
-//    {
-//        $task = Task::factory()->create(['status_id' => $this->taskStatus->id]);
-//        $response = $this->delete("/task_statuses/{$this->taskStatus->id}");
-//
-//        $this->assertDatabaseHas('task_statuses', ['id' => $this->taskStatus->id]);
-//        $response->assertRedirect('/task_statuses');
-//    }
-
     public function testValidate()
     {
         $validateProvider = [
-            ['post', '/task_statuses', []],
-            ['patch', "/task_statuses/{$this->taskStatus->id}", ['id' => $this->taskStatus->id]]
+            ['post', 'task_statuses.index', []],
+            ['patch', 'task_statuses.update', ['task_status' => $this->taskStatus->id]]
         ];
 
         foreach ($validateProvider as [$method, $path, $param]) {
-            $response = $this->$method($path, $param);
+            $response = $this->call($method, route($path, $param));
             $response->assertStatus(302);
             $response->assertRedirect('/');
             $response->assertSessionHasErrors(['name']);
