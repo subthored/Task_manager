@@ -36,7 +36,7 @@ class LabelController extends Controller
     public function update(LabelRequest $request, Label $label)
     {
         $this->saveLabel($label, $request);
-        flash(__('Метка успешно обновлена'))->success();
+        flash(__('Метка успешно изменена'))->success();
         return redirect()->route('labels.index');
     }
 

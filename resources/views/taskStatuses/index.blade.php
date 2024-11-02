@@ -13,7 +13,7 @@
                 :headers="['ID', __('Имя'), __('Дата создания'), __('Действия')]"
                 :items="$taskStatuses"
                 :routes="['delete'=>'task_statuses.destroy',
-                            'edit'=>'task_statuses.edit']"
+                            'update'=>'task_statuses.edit']"
                 :fields="['id', 'name', 'created_at', 'action']">
             </x-table.table>
         @endauth

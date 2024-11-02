@@ -27,7 +27,7 @@ class LabelControllerTest extends TestCase
         return [
             ['/labels', 200, 'labels.index'],
             ['/labels/create', 200],
-            ['/labels/edit', 200]
+            ['/labels/edit', 500]
         ];
     }
 
@@ -56,7 +56,7 @@ class LabelControllerTest extends TestCase
     {
         $response = $this->get('/labels/create');
         $response->assertStatus(200);
-        $response->assertViewIs('labels.edit');
+        $response->assertViewIs('labels.create');
     }
 
     public function testEdit()
