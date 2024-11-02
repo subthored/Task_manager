@@ -46,7 +46,7 @@ class LabelRequest extends FormRequest
                 $errors = $validator->errors();
                 if ($errors->has('name') && $errors->first('name') === 'The name has already been taken') {
                     $errors->forget('name');
-                    $errors->add('name', __('Метка с таким именем уже сущевствует'));
+                    $errors->add('name', __('Метка с таким именем уже существует'));
                 }
             }
         ];
