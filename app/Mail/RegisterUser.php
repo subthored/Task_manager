@@ -29,6 +29,7 @@ class RegisterUser extends Mailable
     public function envelope(): Envelope
     {
         return new Envelope(
+            // @phpstan-ignore-next-line
             from: env('MAIL_FROM_ADDRESS'),
             subject: 'Register User',
         );

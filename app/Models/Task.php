@@ -78,7 +78,10 @@ class Task extends Model
 
     public function getExecutorNameAttribute()
     {
-        return $this->executor->name;
+        if ($this->executor !== null) {
+            return $this->executor->name;
+        }
+        return null;
     }
 
     public static function booted()
