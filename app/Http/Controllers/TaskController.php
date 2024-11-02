@@ -77,7 +77,7 @@ class TaskController extends Controller
     public function update(TaskRequest $request, Task $task)
     {
         $this->saveTask($task, $request);
-        flash(__('Задача успешно обновлена'))->success();
+        flash(__('Задача успешно изменена'))->success();
         return redirect()->route('tasks.index');
     }
 
