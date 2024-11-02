@@ -12,7 +12,6 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class TaskControllerTest extends TestCase
 {
-
     public function setUp(): void
     {
         parent::setUp();

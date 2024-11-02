@@ -11,7 +11,6 @@ use Tests\TestCase;
 
 class EmailVerificationTest extends TestCase
 {
-
     public function testEmailVerificationScreenCanBeRendered(): void
     {
         $user = User::factory()->unverified()->create();

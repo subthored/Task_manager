@@ -28,11 +28,11 @@ class LabelRequest extends FormRequest
     {
         /** @var \App\Models\Label|null $labelId */
         $label = $this->route('label');
-            if ($label !== null) {
-                $labelId = $label->id;
-            } else {
-                $labelId = null;
-            }
+        if ($label !== null) {
+            $labelId = $label->id;
+        } else {
+            $labelId = null;
+        }
         return [
             'name' => ['required', 'max:255', Rule::unique('labels', 'name')->ignore($labelId)],
             'description' => 'nullable|max:1000'

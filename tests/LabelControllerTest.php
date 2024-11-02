@@ -12,7 +12,6 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LabelControllerTest extends TestCase
 {
-
     public function setUp(): void
     {
         parent::setUp();

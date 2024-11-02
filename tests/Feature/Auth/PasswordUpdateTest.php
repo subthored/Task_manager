@@ -9,7 +9,6 @@ use Tests\TestCase;
 
 class PasswordUpdateTest extends TestCase
 {
-
     public function testPasswordCanBeUpdated(): void
     {
         $user = User::factory()->create();
