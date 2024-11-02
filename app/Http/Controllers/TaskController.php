@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Task;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Routing\Controller;
 use App\Http\Requests\TaskRequest;
 use App\Models\TaskStatus;
@@ -12,9 +13,9 @@ use App\Models\Label;
 
 class TaskController extends Controller
 {
-    protected $taskStatuses;
-    protected $users;
-    protected $labels;
+    protected Collection $taskStatuses;
+    protected Collection $users;
+    protected Collection $labels;
 
     public function __construct()
     {
@@ -92,11 +93,13 @@ class TaskController extends Controller
         return redirect()->route('tasks.index');
     }
 
-    public function saveTask(Task $task, TaskRequest $request, $author_id = null)
+    public function saveTask(Task $task, TaskRequest $request, mixed $author_id = null)
     {
         $validated = $request->validated();
         $task->fill($validated);
-        $author_id === null ?: $task->created_by_id = $author_id;
+        if ($author_id !== null) {
+            $task->createt_by_id = $author_id;
+        }
         $task->save();
         $task->labels()->sync($validated['labels']);
     }

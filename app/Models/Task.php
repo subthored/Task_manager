@@ -4,7 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Builder;
 
+/**
+ * @property-read mixed $author_name
+ * @property-read mixed $executor_name
+ * @property-read mixed $labels_name
+ * @property-read mixed $status_name
+ */
 class Task extends Model
 {
     use HasFactory;
@@ -62,25 +69,25 @@ class Task extends Model
         return $this->labels()->pluck('name')->toArray();
     }
 
-    public function scopeFilterByStatus($query, $statusId)
+    public function scopeFilterByStatus(Builder $query, string | null $statusId)
     {
-        if (!empty($statusId)) {
+        if ($statusId !== null && $statusId !== '0') {
             return $query->where('status_id', $statusId);
         }
         return $query;
     }
 
-    public function scopeFilterByCreatedBy($query, $createdById)
+    public function scopeFilterByCreatedBy(Builder $query, string | null $createdById)
     {
-        if (!empty($createdById)) {
+        if ($createdById !== null && $createdById !== '0') {
             return $query->where('created_by_id', $createdById);
         }
         return $query;
     }
 
-    public function scopeFilterByAssignedTo($query, $assignedToId)
+    public function scopeFilterByAssignedTo(Builder $query, string | null $assignedToId)
     {
-        if (!empty($assignedToId)) {
+        if ($assignedToId !== null && $assignedToId !== '0') {
             return $query->where('assigned_to_id', $assignedToId);
         }
         return $query;

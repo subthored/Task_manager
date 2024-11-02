@@ -12,6 +12,7 @@ use PHPUnit\Framework\Attributes\DataProvider;
 
 class TaskStatusControllerTest extends TestCase
 {
+    protected TaskStatus $taskStatus;
     public function setUp(): void
     {
         parent::setUp();

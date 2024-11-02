@@ -12,6 +12,7 @@ use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LabelControllerTest extends TestCase
 {
+    protected Label $label;
     public function setUp(): void
     {
         parent::setUp();
@@ -31,7 +32,7 @@ class LabelControllerTest extends TestCase
     }
 
     #[DataProvider('pathProvider')]
-    public function testAccessGuest($path, $code, $view = null)
+    public function testAccessGuest(string $path, int $code, ?string $view = null)
     {
         auth()->logout();
         $response = $this->get($path);
