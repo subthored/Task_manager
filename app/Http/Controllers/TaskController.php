@@ -28,7 +28,6 @@ class TaskController extends Controller
 
     public function index(Request $request, Task $task)
     {
-        $this->authorize('view', $task);
         $filters = $request->input('filter', []);
 
         $tasks = Task::query()
@@ -63,16 +62,16 @@ class TaskController extends Controller
         return redirect()->route('tasks.index');
     }
 
-    public function show(string $id)
+    public function show(Task $task)
     {
-        $task = Task::findOrFail($id);
+        $task = Task::findOrFail($task->id);
         return view('tasks.show', compact('task'));
     }
 
-    public function edit(string $id)
+    public function edit(Task $task)
     {
         return view('tasks.edit', [
-            'task' => Task::findOrFail($id),
+            'task' => Task::findOrFail($task->id),
             'taskStatuses' => $this->taskStatuses,
             'users' => $this->users,
             'labels' => $this->labels
@@ -102,7 +101,7 @@ class TaskController extends Controller
         $validated = $request->validated();
         $task->fill($validated);
         if ($author_id !== null) {
-            $task->createt_by_id = $author_id;
+            $task->created_by_id = $author_id;
         }
         $task->save();
         $task->labels()->sync($validated['labels']);

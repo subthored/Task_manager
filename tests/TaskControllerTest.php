@@ -62,14 +62,14 @@ class TaskControllerTest extends TestCase
 
     public function testCreate()
     {
-        $response = $this->get('/tasks/create');
+        $response = $this->get(route('tasks.create'));
         $response->assertStatus(200);
         $response->assertViewIs('tasks.create');
     }
 
     public function testEdit()
     {
-        $response = $this->get("/tasks/{$this->task->id}/edit");
+        $response = $this->get(route('tasks.edit', ['task' => $this->task->id]));
         $response->assertStatus(200);
         $response->assertViewIs('tasks.edit');
         $response->assertViewHas('task', $this->task);
@@ -113,7 +113,7 @@ class TaskControllerTest extends TestCase
     public function testDestroyNotOwner()
     {
         $newUser = User::factory()->create();
-        $response = $this->actingAs($newUser)->delete("/tasks/{$this->task->id}");
+        $response = $this->actingAs($newUser)->delete(route('tasks.destroy', ['task' => $this->task->id]));
         $response->assertStatus(302);
     }
 }
