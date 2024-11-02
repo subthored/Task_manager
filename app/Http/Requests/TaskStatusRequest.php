@@ -33,7 +33,7 @@ class TaskStatusRequest extends FormRequest
         return [
             function (Validator $validator) {
                 $errors = $validator->errors();
-                if ($errors->has('name') && $errors->first('name') === 'Статус с таким именем уже существует') {
+                if ($errors->has('name') && $errors->first('name') === 'The name has already been taken.') {
                     $errors->forget('name');
                     $errors->add('name', __('Статус с таким именем уже существует'));
                 }
