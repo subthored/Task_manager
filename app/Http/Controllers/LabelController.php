@@ -3,9 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\LabelRequest;
-use App\Http\Requests\TaskStatusRequest;
 use App\Models\Label;
-use App\Models\TaskStatus;
 use Illuminate\Http\Request;
 
 class LabelController extends Controller

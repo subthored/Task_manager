@@ -2,9 +2,6 @@
 
 namespace Tests;
 
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 use App\Models\Task;
 use App\Models\User;
 use App\Models\TaskStatus;
@@ -100,14 +97,12 @@ class TaskControllerTest extends TestCase
         ]);
         $response = $this->patch("/tasks/{$this->task->id}", $updatedData);
         $this->assertDatabaseHas('tasks', $updatedData);
-//        $response->assertRedirectToRoute('tasks.index');
     }
 
     public function testDestroy()
     {
         $response = $this->delete("/tasks/{$this->task->id}");
         $this->assertDatabaseMissing('tasks', ['id' => $this->task->id]);
-//        $response->assertRedirectToRoute('/tasks');
     }
 
     public function testDestroyNotOwner()

@@ -3,8 +3,6 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
 class TaskRequest extends FormRequest
 {
@@ -25,7 +23,7 @@ class TaskRequest extends FormRequest
     {
         return [
             'name' => 'required|max:255',
-            'description' => 'max:1000',
+            'description' => 'nullable',
             'status_id' => 'required|exists:task_statuses,id',
             'assigned_to_id' => 'nullable|exists:users,id',
             'labels' => 'nullable|array'

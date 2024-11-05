@@ -2,10 +2,6 @@
 
 namespace Tests;
 
-use App\Models\Task;
-use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
-use Tests\TestCase;
 use App\Models\TaskStatus;
 use App\Models\User;
 use PHPUnit\Framework\Attributes\DataProvider;
