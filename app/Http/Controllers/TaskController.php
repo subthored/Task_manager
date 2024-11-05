@@ -17,13 +17,6 @@ class TaskController extends Controller
     protected Collection $users;
     protected Collection $labels;
 
-    public function __construct()
-    {
-        $this->taskStatuses = TaskStatus::all();
-        $this->users = User::all();
-        $this->labels = Label::all();
-    }
-
     public function index(Request $request, Task $task)
     {
         $filters = $request->input('filter', []);
@@ -33,6 +26,8 @@ class TaskController extends Controller
             ->filterByCreatedBy($filters['created_by_id'] ?? null)
             ->filterByAssignedTo($filters['assigned_to_id'] ?? null)
             ->paginate(15);
+        $this->taskStatuses = TaskStatus::all();
+        $this->users = User::all();
 
         return view('tasks.index', [
             'task' => new Task(),
@@ -45,6 +40,9 @@ class TaskController extends Controller
 
     public function create()
     {
+        $this->taskStatuses = TaskStatus::all();
+        $this->users = User::all();
+        $this->labels = Label::all();
         return view('tasks.create', [
             'task' => new Task(),
             'taskStatuses' => $this->taskStatuses,
@@ -68,6 +66,9 @@ class TaskController extends Controller
 
     public function edit(Task $task)
     {
+        $this->taskStatuses = TaskStatus::all();
+        $this->users = User::all();
+        $this->labels = Label::all();
         return view('tasks.edit', [
             'task' => Task::findOrFail($task->id),
             'taskStatuses' => $this->taskStatuses,
